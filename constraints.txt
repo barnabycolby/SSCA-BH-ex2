@@ -1,0 +1,53 @@
+Student
+=========================
+- studentID should be a PRIMARY KEY
+- titleID should be a FOREIGN KEY referencing the titleID column in the titles table
+- sex should be equal to either Male or Female
+- forename should consist only of letters, spaces and the "-" symbol
+- familyname should consist only of letters, spaces and the "-" symbol
+
+Lecturer
+=========================
+- lecturerID should be a PRIMARY KEY
+- titleID should be a FOREIGN KEY referencing the titleID column in the titles table
+- forename should consist only of letters, spaces and the "-" symbol
+- familyname should consist only of letters, spaces and the "-" symbol
+
+Course
+=========================
+- courseID should be a PRIMARY KEY
+- lecturerID should be a NOT NULL FOREIGN KEY referencing the lecturerID column in the Lecturer table
+
+Marks
+=========================
+- studentID should be a NOT NULL FOREIGN KEY referencing the studentID column in the Student table
+- courseID should be a NOT NULL FOREIGN KEY referencing the courseID column in the Course table
+- year should be NOT NULL and between 1 and 5 inclusive
+- sessionID should be a NOT NULL FOREIGN KEY referencing the sessionID column in the Session table
+- typeID should be a NOT NULL FOREIGN KEY referencing the typeID column in the Type table
+- mark should be a NOT NULL value between 0 and 100
+
+StudentContact
+=========================
+- studentID should be a NOT NULL FOREIGN KEY referencing the studentID column in the Student table
+- eMailAddress should be NOT NULL or postalAddress should be NOT NULL or both should be NOT NULL
+
+NextOfKin
+=========================
+- studentID should be a NOT NULL FOREIGN KEY referencing the studentID column in the Student table
+- eMailAddress should be NOT NULL or postalAddress should be NOT NULL or both should be NOT NULL
+
+Titles
+=========================
+- typeID should be a PRIMARY KEY
+- typeString should be a NOT NULL UNIQUE field of maximum length 4
+
+Session
+=========================
+- sessionID should be a PRIMARY KEY
+- sessionString should be a NOT NULL UNIQUE field of maximum length 6
+
+Type
+=========================
+- typeID should be a PRIMARY KEY
+- typeString should be a NOT NULL UNIQUE field of maximum length 6
